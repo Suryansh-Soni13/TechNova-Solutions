@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechNova Solutions | Powering Businesses with Full AI Intelligence</title>
+    <meta name="description"
+        content="TechNova Solutions - Senior full-stack AI web development and mobile solutions. Lead by Suryansh Soni & Tanis Bedia.">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://technovasolutions.ai/">
+    <meta property="og:title" content="TechNova Solutions | AI Intelligence Redefined">
+    <meta property="og:description" content="Senior full-stack AI solutions and high-performance mobile/web apps.">
+    <meta property="og:image" content="assets/logo.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&family=Orbitron:wght@400;700&family=Fira+Code&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+    <canvas id="starfield"></canvas>
+    <div class="grid-overlay"></div>
+
+    <nav>
+        <div class="logo-container">
+            <a href="#" class="logo">TechNova Solutions</a>
+        </div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html" class="active">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <a href="contact.html" class="nav-cta">Ignite Now</a>
+    </nav>
+
+    <section id="hero" class="hero-inner">
+        <div class="hero-content">
+            <h1 class="hero-title reveal">Our<br>Portfolio</h1>
+            <p class="hero-subtext reveal">A showcase of our high-impact AI-native applications, web frameworks, and complete digital transformations.</p>
+        </div>
+
+        <div class="hero-visual reveal">
+            <div class="floating-icons-container">
+                <!-- Row 1 -->
+                <div class="orbit-icon" style="top: -5%; left: 15%; animation-delay: 0s;"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node">
+                </div>
+                <div class="orbit-icon" style="top: 0%; right: 15%; animation-delay: 0.8s;"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                        alt="C++"></div>
+                <div class="orbit-icon" style="top: 5%; left: 45%; animation-delay: 1.2s;"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C"></div>
+
+                <!-- Row 2 -->
+                <div class="orbit-icon" style="top: 15%; left: 5%; animation-delay: 1.5s;"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                </div>
+                <div class="orbit-icon" style="top: 20%; right: 5%; animation-delay: 2.5s;"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                </div>
+                <div class="orbit-icon" style="top: 25%; left: 35%; animation-delay: 0.5s;">
+                    <div style="font-weight: 900; color: var(--primary-cyan); font-size: 0.8rem;">AG</div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="orbit-icon" style="top: 35%; left: 15%; animation-delay: 2.2s;"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                        alt="Python"></div>
+                <div class="orbit-icon" style="top: 40%; right: 25%; animation-delay: 3s;"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL">
+                </div>
+                <div class="orbit-icon" style="top: 45%; right: 5%; animation-delay: 1.8s;"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                </div>
+
+                <!-- Row 4 -->
+                <div class="orbit-icon" style="top: 55%; left: 40%; animation-delay: 3.5s;"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                        alt="JS"></div>
+                <div class="orbit-icon" style="top: 60%; left: 5%; animation-delay: 4s;"><img
+                        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+                        alt="TF"></div>
+                <div class="orbit-icon" style="top: 65%; right: 15%; animation-delay: 2.8s;">
+                    <div style="font-weight: 900; color: #fff; font-size: 0.7rem; opacity: 0.8;">GPT</div>
+                </div>
+            </div>
+
+            <div class="floating-orb"
+                style="top: 20%; left: 20%; width: 250px; height: 250px; background: radial-gradient(circle, var(--primary-cyan) 0%, transparent 60%); opacity: 0.08;">
+            </div>
+            <div class="floating-orb"
+                style="bottom: 10%; right: 10%; width: 300px; height: 300px; background: radial-gradient(circle, var(--violet) 0%, transparent 60%); opacity: 0.05;">
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio-showcase" style="margin-top: 40px; margin-bottom: 80px;">
+        <div class="portfolio-grid">
+            <a href="http://nitinjewellers.shop/" target="_blank" class="portfolio-card reveal">
+                <img src="assets/NitinJewellers.png" alt="Nitin Jewellers" loading="lazy">
+                <div class="portfolio-overlay">Nitin Jewellers</div>
+            </a>
+
+            <a href="https://suryansh-soni13.github.io/Auto-Elite-Garage/" target="_blank" class="portfolio-card reveal" style="transition-delay: 0.2s;">
+                <img src="assets/AutoEliteGarage.png" alt="Auto Elite Garage" loading="lazy">
+                <div class="portfolio-overlay">Auto Elite Garage</div>
+            </a>
+            <a href="https://suryansh-soni13.github.io/Band8War-IELTS-Score-Tracker-Planner/" target="_blank" class="portfolio-card reveal">
+                <img src="assets/Band8War.png" alt="Band8War IELTS Tracker" loading="lazy">
+                <div class="portfolio-overlay">Band8War IELTS Tracker</div>
+            </a>
+            <a href="https://suryansh-soni13.github.io/ResumeHub_AI/" target="_blank" class="portfolio-card reveal" style="transition-delay: 0.1s;">
+                <img src="assets/ResumeHubAI.png" alt="ResumeHub AI" loading="lazy">
+                <div class="portfolio-overlay">ResumeHub AI</div>
+            </a>
+            <a href="https://suryansh-soni13.github.io/Student_Management_System/" target="_blank" class="portfolio-card reveal" style="transition-delay: 0.2s;">
+                <img src="assets/StudentManagementSystem.png" alt="Student Management System" loading="lazy">
+                <div class="portfolio-overlay">Student Management Interface</div>
+            </a>
+            <a href="https://suryansh-soni13.github.io/Fruits/" target="_blank" class="portfolio-card reveal">
+                <img src="assets/Fruits.png" alt="Organic Fruits eCommerce" loading="lazy">
+                <div class="portfolio-overlay">Organic Fruits eCommerce</div>
+            </a>
+            <a href="https://suryansh-soni13.github.io/Freelance-Portfolio/" target="_blank" class="portfolio-card reveal" style="transition-delay: 0.1s;">
+                <img src="assets/FreelancePortfolio.png" alt="Freelance Developer Portfolio" loading="lazy">
+                <div class="portfolio-overlay">Freelancer Dashboard</div>
+            </a>
+            <a href="https://tanish01234.github.io/-Monastery--360-/" target="_blank" class="portfolio-card reveal" style="transition-delay: 0.2s;">
+                <img src="assets/Monastery360.png" alt="Monastery 360" loading="lazy">
+                <div class="portfolio-overlay">Monastery 360</div>
+            </a>
+            <a href="https://idea-forge-ai-bice.vercel.app/" target="_blank" class="portfolio-card reveal">
+                <img src="assets/IdeaForgeAI.png" alt="Idea Forge AI" loading="lazy">
+                <div class="portfolio-overlay">Idea Forge AI</div>
+            </a>
+            <a href="https://mentra-ai-plum.vercel.app/" target="_blank" class="portfolio-card reveal" style="transition-delay: 0.1s;">
+                <img src="assets/MentraAI.png" alt="Mentra AI" loading="lazy">
+                <div class="portfolio-overlay">Mentra AI</div>
+            </a>
+        </div>
+    </section>    <footer>
+        <div class="logo-container" style="margin-bottom: 30px; justify-content: center;">
+            <span class="logo" style="font-size: 2rem;">TechNova</span>
+        </div>
+        <div class="nav-links" style="display:flex; justify-content:center; margin-bottom: 30px; gap: 40px;">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html" class="active">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="copyright">
+            © 2026 TechNova Solutions. All Systems Operational. <br>
+            Designed with Full AI Intelligence.
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
