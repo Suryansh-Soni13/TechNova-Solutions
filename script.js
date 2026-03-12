@@ -202,36 +202,29 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// --- Hero Visal Parallax ---
-const posterFrame = document.querySelector('.index-page .poster-frame');
+// --- 3D Banner Parallax ---
+const banner3D = document.querySelector('.banner-3d-wrapper');
+const textBlock = document.querySelector('.text-3d-block');
 const uiCards = document.querySelectorAll('.floating-ui-card');
-const glowRing = document.querySelector('.stat-glow-ring');
 
-if (posterFrame) {
+if (banner3D && textBlock) {
     window.addEventListener('mousemove', (e) => {
-        const x = (window.innerWidth / 2 - e.clientX) / 40;
-        const y = (window.innerHeight / 2 - e.clientY) / 40;
+        const x = (window.innerWidth / 2 - e.clientX) / 50;
+        const y = (window.innerHeight / 2 - e.clientY) / 50;
 
-        posterFrame.style.transform = `rotateY(${-15 + x}deg) rotateX(${8 + y}deg)`;
+        textBlock.style.transform = `rotateY(${-10 + x}deg) rotateX(${5 + y}deg)`;
         
         uiCards.forEach((card, index) => {
-            const factor = (index + 1) * 20;
+            const factor = (index + 1) * 30;
             const cx = (window.innerWidth / 2 - e.clientX) / factor;
             const cy = (window.innerHeight / 2 - e.clientY) / factor;
-            card.style.transform = `translate(${cx}px, ${cy}px) scale(1.02)`;
+            card.style.transform = `translate(${cx}px, ${cy}px) scale(1.05)`;
         });
-
-        if (glowRing) {
-            const gx = (window.innerWidth / 2 - e.clientX) / 60;
-            const gy = (window.innerHeight / 2 - e.clientY) / 60;
-            glowRing.style.transform = `translate(${gx}px, ${gy}px)`;
-        }
     });
 
-    posterFrame.addEventListener('mouseleave', () => {
-        posterFrame.style.transform = `rotateY(-15deg) rotateX(8deg)`;
+    banner3D.addEventListener('mouseleave', () => {
+        textBlock.style.transform = `rotateY(-10deg) rotateX(5deg)`;
         uiCards.forEach(card => card.style.transform = `translate(0, 0) scale(1)`);
-        if (glowRing) glowRing.style.transform = `translate(0, 0)`;
     });
 }
 
