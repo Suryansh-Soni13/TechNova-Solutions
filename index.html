@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechNova Solutions | Powering Businesses with Full AI Intelligence</title>
+    <title>TechNova Solutions | AI Powered ~ Digital Solutions</title>
     <meta name="description"
         content="TechNova Solutions - Senior full-stack AI web development and mobile solutions. Lead by Suryansh Soni & Tanis Bedia.">
 
@@ -24,18 +24,23 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="LOGO.png">
 </head>
 
 <body class="index-page">
 
     <div id="cursor-dot"></div>
-    <div id="cursor-ring"></div>
     <canvas id="starfield"></canvas>
     <div class="grid-overlay"></div>
 
     <nav>
         <div class="logo-container">
-            <a href="#" class="logo">TechNova Solutions</a>
+            <a href="index.html" class="logo">
+                <img src="LOGO.png" alt="TechNova Logo">
+                <span class="logo-text">TechNova Solutions</span>
+            </a>
         </div>
         <div class="nav-links">
             <a href="index.html" class="active">Home</a>
@@ -55,12 +60,14 @@
 
     <section id="hero">
         <div class="hero-content">
+
             <div class="hero-badge reveal">ELITE AI ENGINEERING</div>
             <h1 class="hero-title reveal">The Future of<br>Digital<br>Intelligence</h1>
-            <p class="hero-subtext reveal">Custom-built AI solutions, elite full-stack web architectures, and 
+            <p class="hero-subtext reveal">Custom-built AI solutions, elite full-stack web architectures, and
                 high-performance mobile development for the next generation of enterprises.</p>
             <div class="hero-btns reveal">
-                <a href="services.html" class="btn btn-primary" style="padding: 16px 35px; border-radius: 50px;">Explore Tech</a>
+                <a href="services.html" class="btn btn-primary" style="padding: 16px 35px; border-radius: 50px;">Explore
+                    Tech</a>
                 <a href="about.html" class="btn btn-outline"
                     style="padding: 16px 35px; border-radius: 50px; margin-left: 20px;">The Engine</a>
             </div>
@@ -108,14 +115,15 @@
                         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
                         alt="TF"></div>
                 <div class="orbit-icon" style="top: 65%; right: 15%; animation-delay: 2.8s;">
-                    <div style="font-weight: 900; color: #fff; font-size: 0.7rem; opacity: 0.8;">GPT</div>
+                    <div style="font-weight: 900; color: var(--text-main); font-size: 0.7rem; opacity: 0.8;">GPT</div>
                 </div>
             </div>
 
             <div class="stat-glow-ring"></div>
+            <div class="pink-aura-glow"></div>
             <div class="poster-frame">
                 <img src="cyber_man_laptop.png" alt="TechNova Specialist" class="poster-image">
-                
+
                 <div class="floating-ui-card ui-card-1">
                     <div class="ui-card-title">AI Engine Active</div>
                     <div class="ui-card-content">Neural Processing: 99.8%</div>
@@ -165,9 +173,10 @@
                     accurate, engaging, and authoritative in local search.</p>
             </div>
         </div>
-        
+
         <div class="reveal" style="text-align: center; margin-top: 60px;">
-            <a href="services.html" class="btn btn-primary" style="display:-inline-block; margin-top:20px;">Explore All Services</a>
+            <a href="services.html" class="btn btn-primary" style="display:-inline-block; margin-top:20px;">Explore All
+                Services</a>
         </div>
     </section>
 
@@ -187,7 +196,8 @@
                 </div>
 
                 <div style="margin-top: 40px;">
-                    <a href="contact.html" class="btn btn-primary" style="display: inline-block;">Consult with TechNova</a>
+                    <a href="contact.html" class="btn btn-primary" style="display: inline-block;">Consult with
+                        TechNova</a>
                 </div>
             </div>
 
@@ -216,19 +226,19 @@
     <section id="stats">
         <div class="stats-row reveal">
             <div class="stat-item">
-                <div class="stat-num" data-val="120">120+</div>
+                <div class="stat-num" data-val="20">20+</div>
                 <div class="stat-label">Projects Deployed</div>
             </div>
             <div class="stat-item">
-                <div class="stat-num" data-val="98">98%</div>
+                <div class="stat-num" data-val="95">95%</div>
                 <div class="stat-label">Success Rate</div>
             </div>
             <div class="stat-item">
-                <div class="stat-num" data-val="15">15+</div>
+                <div class="stat-num" data-val="10">10+</div>
                 <div class="stat-label">AI Prototypes</div>
             </div>
             <div class="stat-item">
-                <div class="stat-num" data-val="5">5M+</div>
+                <div class="stat-num" data-val="23">23+</div>
                 <div class="stat-label">Users Impacted</div>
             </div>
         </div>
@@ -238,7 +248,7 @@
 
     <footer>
         <div class="logo-container" style="margin-bottom: 30px; justify-content: center;">
-            <span class="logo" style="font-size: 2rem;">TechNova</span>
+            <span class="logo" style="font-size: 2rem;">TechNova Solutions</span>
         </div>
         <div class="nav-links" style="display:flex; justify-content:center; margin-bottom: 30px; gap: 40px;">
             <a href="index.html" class="active">Home</a>
@@ -249,10 +259,28 @@
             <a href="contact.html">Contact</a>
         </div>
         <div class="copyright">
-            © 2026 TechNova Solutions. All Systems Operational. <br>
-            Designed with Full AI Intelligence.
+            © 2026 TechNova Solutions.<br>
+            Developed with Full AI Intelligence.
         </div>
     </footer>
+
+    <!-- AI Chatbox -->
+    <div id="ai-chat-toggle">
+        <img src="LOGO.png" alt="TNS AI">
+    </div>
+    <div id="chat-window">
+        <div class="chat-header">
+            <div class="status-dot"></div>
+            <span><strong>TechNova AI Assistant</strong></span>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message ai">Hello! I'm Nova, your AI assistant. How can I help you today?</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Ask Nova anything...">
+            <button id="send-msg">🚀</button>
+        </div>
+    </div>
 
     <!-- Script -->
     <script src="script.js"></script>

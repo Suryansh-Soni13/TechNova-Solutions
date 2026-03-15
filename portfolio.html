@@ -24,18 +24,23 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="LOGO.png">
 </head>
 
 <body>
 
     <div id="cursor-dot"></div>
-    <div id="cursor-ring"></div>
     <canvas id="starfield"></canvas>
     <div class="grid-overlay"></div>
 
     <nav>
         <div class="logo-container">
-            <a href="#" class="logo">TechNova Solutions</a>
+            <a href="index.html" class="logo">
+                <img src="LOGO.png" alt="TechNova Logo">
+                <span class="logo-text">TechNova Solutions</span>
+            </a>
         </div>
         <div class="nav-links">
             <a href="index.html">Home</a>
@@ -56,7 +61,8 @@
     <section id="hero" class="hero-inner">
         <div class="hero-content">
             <h1 class="hero-title reveal">Our<br>Portfolio</h1>
-            <p class="hero-subtext reveal">A showcase of our high-impact AI-native applications, web frameworks, and complete digital transformations.</p>
+            <p class="hero-subtext reveal">A showcase of our high-impact AI-native applications, web frameworks, and
+                complete digital transformations.</p>
         </div>
 
         <div class="hero-visual reveal">
@@ -101,9 +107,10 @@
                         src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
                         alt="TF"></div>
                 <div class="orbit-icon" style="top: 65%; right: 15%; animation-delay: 2.8s;">
-                    <div style="font-weight: 900; color: #fff; font-size: 0.7rem; opacity: 0.8;">GPT</div>
+                    <div style="font-weight: 900; color: var(--text-main); font-size: 0.7rem; opacity: 0.8;">GPT</div>
                 </div>
             </div>
+            <div class="pink-aura-glow"></div>
             <div class="floating-orb"
                 style="top: 20%; left: 20%; width: 250px; height: 250px; background: radial-gradient(circle, var(--primary-cyan) 0%, transparent 60%); opacity: 0.08;">
             </div>
@@ -120,19 +127,23 @@
                 <div class="portfolio-overlay">Nitin Jewellers</div>
             </a>
 
-            <a href="https://suryansh-soni13.github.io/Auto-Elite-Garage/" target="_blank" class="portfolio-card reveal" style="transition-delay: 0.2s;">
+            <a href="https://suryansh-soni13.github.io/Auto-Elite-Garage/" target="_blank" class="portfolio-card reveal"
+                style="transition-delay: 0.2s;">
                 <img src="assets/AutoEliteGarage.png" alt="Auto Elite Garage" loading="lazy">
                 <div class="portfolio-overlay">Auto Elite Garage</div>
             </a>
-            <a href="https://suryansh-soni13.github.io/Band8War-IELTS-Score-Tracker-Planner/" target="_blank" class="portfolio-card reveal">
+            <a href="https://suryansh-soni13.github.io/Band8War-IELTS-Score-Tracker-Planner/" target="_blank"
+                class="portfolio-card reveal">
                 <img src="assets/Band8War.png" alt="Band8War IELTS Tracker" loading="lazy">
                 <div class="portfolio-overlay">Band8War IELTS Tracker</div>
             </a>
-            <a href="https://suryansh-soni13.github.io/ResumeHub_AI/" target="_blank" class="portfolio-card reveal" style="transition-delay: 0.1s;">
+            <a href="https://suryansh-soni13.github.io/ResumeHub_AI/" target="_blank" class="portfolio-card reveal"
+                style="transition-delay: 0.1s;">
                 <img src="assets/ResumeHubAI.png" alt="ResumeHub AI" loading="lazy">
                 <div class="portfolio-overlay">ResumeHub AI</div>
             </a>
-            <a href="https://suryansh-soni13.github.io/Student_Management_System/" target="_blank" class="portfolio-card reveal" style="transition-delay: 0.2s;">
+            <a href="https://suryansh-soni13.github.io/Student_Management_System/" target="_blank"
+                class="portfolio-card reveal" style="transition-delay: 0.2s;">
                 <img src="assets/StudentManagementSystem.png" alt="Student Management System" loading="lazy">
                 <div class="portfolio-overlay">Student Management Interface</div>
             </a>
@@ -140,11 +151,13 @@
                 <img src="assets/Fruits.png" alt="Organic Fruits eCommerce" loading="lazy">
                 <div class="portfolio-overlay">Organic Fruits eCommerce</div>
             </a>
-            <a href="https://suryansh-soni13.github.io/Freelance-Portfolio/" target="_blank" class="portfolio-card reveal" style="transition-delay: 0.1s;">
+            <a href="https://suryansh-soni13.github.io/Freelance-Portfolio/" target="_blank"
+                class="portfolio-card reveal" style="transition-delay: 0.1s;">
                 <img src="assets/FreelancePortfolio.png" alt="Freelance Developer Portfolio" loading="lazy">
                 <div class="portfolio-overlay">Freelancer Dashboard</div>
             </a>
-            <a href="https://tanish01234.github.io/-Monastery--360-/" target="_blank" class="portfolio-card reveal" style="transition-delay: 0.2s;">
+            <a href="https://tanish01234.github.io/-Monastery--360-/" target="_blank" class="portfolio-card reveal"
+                style="transition-delay: 0.2s;">
                 <img src="assets/Monastery360.png" alt="Monastery 360" loading="lazy">
                 <div class="portfolio-overlay">Monastery 360</div>
             </a>
@@ -152,14 +165,16 @@
                 <img src="assets/IdeaForgeAI.png" alt="Idea Forge AI" loading="lazy">
                 <div class="portfolio-overlay">Idea Forge AI</div>
             </a>
-            <a href="https://mentra-ai-plum.vercel.app/" target="_blank" class="portfolio-card reveal" style="transition-delay: 0.1s;">
+            <a href="https://mentra-ai-plum.vercel.app/" target="_blank" class="portfolio-card reveal"
+                style="transition-delay: 0.1s;">
                 <img src="assets/MentraAI.png" alt="Mentra AI" loading="lazy">
                 <div class="portfolio-overlay">Mentra AI</div>
             </a>
         </div>
-    </section>    <footer>
+    </section>
+    <footer>
         <div class="logo-container" style="margin-bottom: 30px; justify-content: center;">
-            <span class="logo" style="font-size: 2rem;">TechNova</span>
+            <span class="logo" style="font-size: 2rem;">TechNova Solutions</span>
         </div>
         <div class="nav-links" style="display:flex; justify-content:center; margin-bottom: 30px; gap: 40px;">
             <a href="index.html">Home</a>
@@ -170,10 +185,28 @@
             <a href="contact.html">Contact</a>
         </div>
         <div class="copyright">
-            © 2026 TechNova Solutions. All Systems Operational. <br>
-            Designed with Full AI Intelligence.
+            © 2026 TechNova Solutions.<br>
+            Developed with Full AI Intelligence.
         </div>
     </footer>
+
+    <!-- AI Chatbox -->
+    <div id="ai-chat-toggle">
+        <img src="LOGO.png" alt="TNS AI">
+    </div>
+    <div id="chat-window">
+        <div class="chat-header">
+            <div class="status-dot"></div>
+            <span><strong>TechNova AI Assistant</strong></span>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message ai">Hello! I'm Nova, your AI assistant. How can I help you today?</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Ask Nova anything...">
+            <button id="send-msg">🚀</button>
+        </div>
+    </div>
 
     <!-- Script -->
     <script src="script.js"></script>
