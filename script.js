@@ -341,69 +341,41 @@ if (chatToggle && chatWindow) {
 
             setTimeout(() => {
                 chatMessages.removeChild(typingDiv);
-                let response = "I am Nova, the specialized AI Core for TechNova Solutions. I can provide elite insights into our <strong>AI Web Development</strong>, <strong>AI App Development</strong>, <strong>Local SEO Dominance</strong>, and <strong>Career Engineering</strong>. How can I assist your objective today?";
                 
                 const input = text.toLowerCase();
+                let response = "";
 
-                // Detailed Service Intelligence
-                if (input.includes('ai web') || (input.includes('web') && input.includes('dev'))) {
-                    response = "TechNova specializes in <strong>AI Web Development</strong>. We build high-speed, scalable React/Node.js architectures integrated with custom AI agents and premium glassmorphism aesthetics. <br><br> <a href='services.html' style='color: var(--primary-cyan); font-weight: bold;'>View Web Services →</a>";
-                } 
-                else if (input.includes('ai app') || (input.includes('app') && input.includes('dev')) || input.includes('mobile')) {
-                    response = "Our <strong>AI App Development</strong> ecosystems deliver digital dominance on iOS and Android. We craft seamless, AI-powered mobile experiences that engage and retain users at scale. <br><br> <a href='services.html' style='color: var(--primary-cyan); font-weight: bold;'>View App Services →</a>";
-                }
-                else if (input.includes('seo') || input.includes('local search') || input.includes('rank')) {
-                    response = "Our <strong>Local SEO Services</strong> are designed to rank your business at the top of search results, driving foot traffic and calls through strategic optimization and elite technical SEO.";
-                }
-                else if (input.includes('gbp') || input.includes('google business') || input.includes('profile')) {
-                    response = "We provide <strong>Google Business Profile (GBP) Management</strong>. This includes complete oversight, optimization, and authority building to ensure your business dominates local search results.";
-                }
-                else if (input.includes('maps') || input.includes('google maps')) {
-                    response = "Our <strong>Google Maps Listing Management</strong> ensures local customers find you instantly. we optimize your presence for maximum visibility and authority on the map.";
-                }
-                else if (input.includes('listing') || input.includes('directory')) {
-                    response = "We offer <strong>Local Business Listing Management</strong>, synchronizing your information across all major directories to build massive trust and ranking authority.";
-                }
-                else if (input.includes('prompt') || input.includes('engineering') || input.includes('llm')) {
-                    response = "TechNova provides expert <strong>Prompt Engineering</strong>. We design and optimize strategic prompts to maximize the performance, creativity, and accuracy of Large Language Models (LLMs).";
-                }
-                else if (input.includes('internship') || input.includes('job') || input.includes('join')) {
-                    response = "TechNova is actively recruiting elite talent for AI and Web roles. You can apply directly via our <strong>Internship Portal</strong>. <br><br> <a href='internship.html' style='display: inline-block; padding: 10px 20px; background: var(--primary-cyan); color: white; border-radius: 25px; text-decoration: none; font-weight: 700;'>APPLY NOW</a>";
-                }
-                else if (input.includes('price') || input.includes('cost') || input.includes('budget') || input.includes('how much') || input.includes('rs') || input.includes('inr') || input.includes('rate')) {
+                if (input.includes('price') || input.includes('cost') || input.includes('budget') || input.includes('how much') || input.includes('rate') || input.includes('rs') || input.includes('inr')) {
                     response = `
-                        <strong>TechNova Premium Service Matrix (2026):</strong><br><br>
-                        ⚡ <strong>Absolute Entry Point:</strong><br>
-                        • <strong>Business on Google (setup):</strong> starts ₹2,000<br>
-                        • <strong>Basic Web Dev:</strong> starts ₹3,000<br>
-                        • <strong>Basic App Dev:</strong> starts ₹5,000<br>
-                        • <strong>AI Chatbot Dev:</strong> starts ₹6,000<br><br>
-                        🚀 <strong>Starter (₹9,999):</strong><br>
-                        • 1-5 Pages Elite Design<br>
-                        • WhatsApp Integration & Basic SEO<br>
-                        • Template-based Performance<br><br>
-                        🔥 <strong>Business AI (₹29,999):</strong><br>
-                        • AI Chatbot & Automation<br>
-                        • CRM Integration & Full SEO Setup<br>
-                        • Custom AI Workflow Integration<br><br>
-                        💎 <strong>Premium Ecosystem (₹59,999):</strong><br>
-                        • Advanced AI Website + Mobile App<br>
-                        • Predictive Intelligence Features<br>
-                        • Complete Digital Dominance Suite<br><br>
-                        📈 <strong>Ongoing Growth:</strong><br>
-                        • <strong>Local SEO Pack:</strong> ₹9,999/mo<br>
-                        • <strong>GBP Management:</strong> ₹4,999/mo<br>
-                        • <strong>Prompt Engineering:</strong> ₹14,999<br><br>
-                        <em>*Note: <strong>THESE COSTS ARE ESTIMATES & APPROXIMATE.</strong> Prices may be lower or higher as per your specific project demands and requirements.</em><br>
-                        <em>*Custom enterprise quotes available for 10x ROI scaling.</em>
+                        <div style="background: rgba(13, 148, 136, 0.05); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border);">
+                            <h4 style="color: var(--primary-cyan); margin-bottom: 10px; font-family: 'Orbitron', sans-serif;">Premium Service Matrix (2026)</h4>
+                            <div style="font-size: 0.85rem; line-height: 1.6;">
+                                🚀 <strong>Starter: ₹9,999</strong><br>
+                                <span style="opacity: 0.7; font-size: 0.75rem;">1-5 Pages • Basic SEO • WhatsApp Integration</span><br><br>
+                                🔥 <strong>Business AI: ₹29,999</strong><br>
+                                <span style="opacity: 0.7; font-size: 0.75rem;">AI Chatbot • CRM Integration • Full SEO Setup</span><br><br>
+                                💎 <strong>Premium Ecosystem: ₹59,999+</strong><br>
+                                <span style="opacity: 0.7; font-size: 0.75rem;">Predictive Intelligence • Advanced App Suite • 10x ROI Scaling</span>
+                            </div>
+                            <p style="font-size: 0.7rem; margin-top: 10px; font-style: italic; opacity: 0.6;">* Estimates only. Custom quotes available based on complexity.</p>
+                        </div>
                     `;
+                } else if (input.includes('service') || input.includes('what do you do') || input.includes('offer')) {
+                    response = "TechNova Solutions provides elite **AI-Powered Development**:\n\n• **AI Web Architectures** (React/Node.js)\n• **Next-Gen Mobile Apps** (iOS/Android)\n• **Prompt Engineering** & LLM Integration\n• **Local SEO Dominance** & GBP Management\n\n[Explore Our Services →](services.html)";
+                } else if (input.includes('internship') || input.includes('job') || input.includes('career') || input.includes('apply')) {
+                    response = "We are searching for elite talent to join our AI Core. Current openings are available in our **Internship Portal**.\n\n[PROCEED TO APPLICATION →](internship.html)";
+                } else if (input.includes('contact') || input.includes('email') || input.includes('reach') || input.includes('phone')) {
+                    response = "Direct Transmission Channel: **support.technovasolutions@gmail.com**\n\nAlternatively, you can [Ignite a Proposal here](contact.html).";
+                } else if (input.includes('hello') || input.includes('hi') || input.includes('hey')) {
+                    response = "Nova System Online. I am your specialized AI Core at TechNova. I can assist with inquiries regarding **AI Web/App Development**, **Local SEO**, or **Career Opportunities**. How can I assist your objective?";
+                } else {
+                    response = "I have analyzed your request. While my neural paths are still evolving, I can confirm that TechNova Solutions specializes in **AI-Powered Digital Dominance**. \n\nWould you like to explore our [Services](services.html) or [Contact an Agent](contact.html)?";
                 }
-                else if (input.includes('contact') || input.includes('email')) {
-                    response = "Transmission Channel: support.technovasolutions@gmail.com. You can also use the 'Ignite Now' button on our Contact page.";
-                }
-                else if (input.includes('hello') || input.includes('hi')) {
-                    response = "Nova System Online. Ready to assist with AI Web, AI App, Local SEO, and GBP Management inquiries. What is your objective?";
-                }
+
+                // Convert markdown-ish to HTML for professional look
+                response = response.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                response = response.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" style="color: var(--primary-cyan); font-weight: bold; text-decoration: none;">$1</a>');
+                response = response.replace(/\n/g, '<br>');
 
                 addMessage(response, 'ai');
             }, 1000);
