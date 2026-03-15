@@ -305,33 +305,53 @@ const chatWindow = document.getElementById('chat-window');
 const chatInput = document.getElementById('chat-input');
 const sendMsgBtn = document.getElementById('send-msg');
 const chatMessages = document.getElementById('chat-messages');
+const chatCloseBtn = document.getElementById('chat-close-btn');
 
-if (chatToggle && chatWindow) {
+function openChat() {
+    if (chatWindow) {
+        chatWindow.classList.add('active');
+        if (chatInput) chatInput.focus();
+    }
+}
+
+function closeChat() {
+    if (chatWindow) chatWindow.classList.remove('active');
+}
+
+if (chatToggle) {
     chatToggle.addEventListener('click', () => {
-        chatWindow.classList.toggle('active');
-        if (chatWindow.classList.contains('active')) {
-            chatInput.focus();
+        if (chatWindow && chatWindow.classList.contains('active')) {
+            closeChat();
+        } else {
+            openChat();
         }
     });
+}
+
+if (chatCloseBtn) {
+    chatCloseBtn.addEventListener('click', closeChat);
+}
+
+if (chatMessages && chatInput && sendMsgBtn) {
 
     const addMessage = (content, sender) => {
         const msgDiv = document.createElement('div');
         msgDiv.className = `message ${sender}`;
-        msgDiv.innerHTML = content; 
+        msgDiv.innerHTML = content;
         chatMessages.appendChild(msgDiv);
         chatMessages.scrollTop = chatMessages.scrollHeight;
     };
 
-    const handleSend = (overrideText = null) => {
-        const text = overrideText || chatInput.value.trim();
+    const handleSend = () => {
+        const text = chatInput.value.trim();
         if (!text) return;
 
-        // Escape user text before displaying
-        const safeUserText = (overrideText || text).replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        const safeUserText = text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
         addMessage(safeUserText, 'user');
         chatInput.value = '';
+        chatInput.focus();
 
-        // Simulate AI Response
+        // Show typing indicator
         setTimeout(() => {
             const typingDiv = document.createElement('div');
             typingDiv.className = 'message ai typing';
@@ -341,49 +361,65 @@ if (chatToggle && chatWindow) {
 
             setTimeout(() => {
                 chatMessages.removeChild(typingDiv);
-                
+
                 const input = text.toLowerCase();
                 let response = "";
 
                 if (input.includes('price') || input.includes('cost') || input.includes('budget') || input.includes('how much') || input.includes('rate') || input.includes('rs') || input.includes('inr')) {
                     response = `
-                        <div style="background: rgba(13, 148, 136, 0.05); padding: 15px; border-radius: 12px; border: 1px solid var(--glass-border);">
-                            <h4 style="color: var(--primary-cyan); margin-bottom: 10px; font-family: 'Orbitron', sans-serif;">Premium Service Matrix (2026)</h4>
-                            <div style="font-size: 0.85rem; line-height: 1.6;">
+                        <div style="background: rgba(13, 148, 136, 0.05); padding: 15px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.08);">
+                            <h4 style="color: var(--primary-cyan); margin-bottom: 10px; font-family: 'Orbitron', sans-serif; font-size: 0.85rem;">Premium Service Matrix (2026)</h4>
+                            <div style="font-size: 0.82rem; line-height: 1.7;">
                                 🚀 <strong>Starter: ₹9,999</strong><br>
-                                <span style="opacity: 0.7; font-size: 0.75rem;">1-5 Pages • Basic SEO • WhatsApp Integration</span><br><br>
+                                <span style="opacity: 0.7;">1-5 Pages • Basic SEO • WhatsApp Integration</span><br><br>
                                 🔥 <strong>Business AI: ₹29,999</strong><br>
-                                <span style="opacity: 0.7; font-size: 0.75rem;">AI Chatbot • CRM Integration • Full SEO Setup</span><br><br>
+                                <span style="opacity: 0.7;">AI Chatbot • CRM • Full SEO Setup</span><br><br>
                                 💎 <strong>Premium Ecosystem: ₹59,999+</strong><br>
-                                <span style="opacity: 0.7; font-size: 0.75rem;">Predictive Intelligence • Advanced App Suite • 10x ROI Scaling</span>
+                                <span style="opacity: 0.7;">Advanced App Suite • 10x ROI Scaling</span>
                             </div>
-                            <p style="font-size: 0.7rem; margin-top: 10px; font-style: italic; opacity: 0.6;">* Estimates only. Custom quotes available based on complexity.</p>
+                            <p style="font-size: 0.7rem; margin-top: 10px; font-style: italic; opacity: 0.6;">* Estimates only. Custom quotes available.</p>
                         </div>
                     `;
                 } else if (input.includes('service') || input.includes('what do you do') || input.includes('offer')) {
-                    response = "TechNova Solutions provides elite **AI-Powered Development**:\n\n• **AI Web Architectures** (React/Node.js)\n• **Next-Gen Mobile Apps** (iOS/Android)\n• **Prompt Engineering** & LLM Integration\n• **Local SEO Dominance** & GBP Management\n\n[Explore Our Services →](services.html)";
+                    response = "TechNova Solutions offers elite **AI-Powered Development**:<br><br>• **AI Web Architectures** (React/Node.js)<br>• **Next-Gen Mobile Apps** (iOS/Android)<br>• **Prompt Engineering** & LLM Integration<br>• **Local SEO** & GBP Management<br><br><a href='services.html' style='color: var(--primary-cyan); font-weight: bold; text-decoration: none;'>Explore Services →</a>";
                 } else if (input.includes('internship') || input.includes('job') || input.includes('career') || input.includes('apply')) {
-                    response = "We are searching for elite talent to join our AI Core. Current openings are available in our **Internship Portal**.\n\n[PROCEED TO APPLICATION →](internship.html)";
+                    response = "We are searching for elite talent to join our AI Core!<br><br><a href='internship.html' style='display:inline-block; padding:10px 20px; background:var(--primary-cyan); color:white; border-radius:25px; text-decoration:none; font-weight:700;'>VIEW OPENINGS →</a>";
                 } else if (input.includes('contact') || input.includes('email') || input.includes('reach') || input.includes('phone')) {
-                    response = "Direct Transmission Channel: **support.technovasolutions@gmail.com**\n\nAlternatively, you can [Ignite a Proposal here](contact.html).";
-                } else if (input.includes('hello') || input.includes('hi') || input.includes('hey')) {
-                    response = "Nova System Online. I am your specialized AI Core at TechNova. I can assist with inquiries regarding **AI Web/App Development**, **Local SEO**, or **Career Opportunities**. How can I assist your objective?";
+                    response = "📧 <strong>support.technovasolutions@gmail.com</strong><br><br><a href='contact.html' style='color: var(--primary-cyan); font-weight: bold; text-decoration: none;'>Send us a message →</a>";
+                } else if (input.includes('hello') || input.includes('hi') || input.includes('hey') || input.includes('hii')) {
+                    response = "👋 Nova System Online! I can help with:<br><br>• <strong>Pricing & Services</strong><br>• <strong>Internship Applications</strong><br>• <strong>Contact Information</strong><br><br>What can I assist you with?";
+                } else if (input.includes('web') || input.includes('website') || input.includes('app') || input.includes('mobile')) {
+                    response = "TechNova specializes in <strong>AI-integrated web & mobile apps</strong> — React, Node.js, Android & iOS.<br><br><a href='services.html' style='color: var(--primary-cyan); font-weight: bold; text-decoration: none;'>View Services →</a>";
+                } else if (input.includes('seo') || input.includes('google') || input.includes('rank') || input.includes('local')) {
+                    response = "Our <strong>Local SEO & Google Business Profile</strong> services rank your business at the top of search results, driving foot traffic and calls.";
                 } else {
-                    response = "I have analyzed your request. While my neural paths are still evolving, I can confirm that TechNova Solutions specializes in **AI-Powered Digital Dominance**. \n\nWould you like to explore our [Services](services.html) or [Contact an Agent](contact.html)?";
+                    response = "I'm Nova, TechNova's AI Assistant! I can help you with <strong>services</strong>, <strong>pricing</strong>, <strong>internships</strong>, or <strong>contact info</strong>. What would you like to know?";
                 }
 
-                // Convert markdown-ish to HTML for professional look
+                // Bold + link markdown conversion
                 response = response.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
                 response = response.replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" style="color: var(--primary-cyan); font-weight: bold; text-decoration: none;">$1</a>');
-                response = response.replace(/\n/g, '<br>');
 
                 addMessage(response, 'ai');
             }, 1000);
-        }, 500);
+        }, 400);
     };
 
+    // Send button — click AND touchend for mobile
     sendMsgBtn.addEventListener('click', handleSend);
-    chatInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') handleSend();
+    sendMsgBtn.addEventListener('touchend', (e) => {
+        e.preventDefault();
+        handleSend();
+    });
+
+    // Enter key — use keydown (works on all browsers including mobile)
+    chatInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            handleSend();
+        }
     });
 }
+
+
+
