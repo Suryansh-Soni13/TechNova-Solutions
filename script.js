@@ -146,7 +146,7 @@ const observer = new IntersectionObserver((entries) => {
             }
         }
     });
-}, { threshold: 0.1 });
+}, { threshold: 0.05 });
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
