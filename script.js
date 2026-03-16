@@ -310,12 +310,21 @@ const chatCloseBtn = document.getElementById('chat-close-btn');
 function openChat() {
     if (chatWindow) {
         chatWindow.classList.add('active');
-        if (chatInput) chatInput.focus();
+        // Prevent body scroll on mobile for full-screen experience
+        if (window.innerWidth <= 480) {
+            document.body.style.overflow = 'hidden';
+        }
+        setTimeout(() => {
+            if (chatInput) chatInput.focus();
+        }, 300);
     }
 }
 
 function closeChat() {
-    if (chatWindow) chatWindow.classList.remove('active');
+    if (chatWindow) {
+        chatWindow.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
 }
 
 if (chatToggle) {
