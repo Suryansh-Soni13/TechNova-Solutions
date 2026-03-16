@@ -1,4 +1,4 @@
-# TechNova Solutions | Enterprise AI Engineering
+# TechNova Solutions | AI Powered ~ Smart Digital Solutions
 
 ![TechNova Solutions](LOGO.png)
 
